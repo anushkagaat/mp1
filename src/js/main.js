@@ -105,5 +105,16 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   });
 
+  // Navbar resize on scroll
+  window.addEventListener("scroll", function () {
+  const nav = document.querySelector(".nav");
+
+  if (window.scrollY > 50) {
+    nav.classList.add("shrink");   // smaller navbar
+  } else {
+    nav.classList.remove("shrink"); // big navbar at top
+  }
+  });
+
 
 });

@@ -70,12 +70,15 @@ section.section h2 {
 /* ------------------------
    NAVBAR
 ------------------------- */
+/* ------------------------
+   NAVBAR RESIZING
+------------------------- */
 .nav {
-  position: fixed; // stick to top
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 100;
-  background: transparent; // transparent over hero
+  background: transparent;
   color: #fff;
   transition: all 0.3s ease;
 
@@ -83,45 +86,56 @@ section.section h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
-  }
-
-  .logo {
-    font-weight: 700;
-    font-size: 1.4rem;
-    letter-spacing: .05em;
+    flex-wrap: nowrap;   // ✅ prevent wrapping
+    padding: 28px 0;
+    transition: padding 0.3s ease;
   }
 
   ul {
     list-style: none;
     display: flex;
-    gap: 1rem;
-    margin: 0; padding: 0;
+    gap: 1.5rem;         // ✅ spacing between items
+    margin: 0;
+    padding: 0;
+    flex-wrap: nowrap;   // ✅ ensure they stay in one line
+  }
+
+  li {
+    display: inline-block; // ✅ ensure horizontal flow
+  }
+
+  .logo {
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: .05em;
+    transition: font-size 0.3s ease;
+    white-space: nowrap;   // ✅ logo text won’t wrap
   }
 
   .nav-link {
-    padding: .6rem 1rem;
-    border-radius: 6px;
-    transition: background 0.3s ease;
-
-    &:hover,
-    &:focus-visible {
-      background: rgba(255,255,255,0.15);
-    }
-
-    &.active {
-      background: var(--accent);
-      color: #fff;
-      font-weight: 700;
-    }
+    padding: .8rem 1.2rem;
+    font-size: 1.1rem;
+    transition: font-size 0.3s ease, padding 0.3s ease;
+    white-space: nowrap;   // ✅ links won’t break into two lines
   }
 
-  /* Style after scrolling */
-  &.scrolled {
-    background: rgba(11, 18, 33, 0.9); // dark semi-transparent background
-    backdrop-filter: blur(8px); // subtle glass effect
+  /* Smaller navbar after scrolling */
+  &.shrink {
+    background: rgba(11, 18, 33, 0.9);
+    backdrop-filter: blur(6px);
+
+    .container { padding: 14px 0; }
+
+    .logo { font-size: 1.3rem; }
+
+    .nav-link {
+      font-size: 0.95rem;
+      padding: .5rem .9rem;
+    }
   }
 }
+
+
 
 /* ------------------------
    HERO SECTION
