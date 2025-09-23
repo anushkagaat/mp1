@@ -1,13 +1,193 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MP1</title>
-    </head>
-    <body>
-        <h1>Hello World! Welcome to MP1!</h1>
-        <img src="assets/image.jpg">
-    </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Laniege</title>
+
+  <!-- SCSS / CSS -->
+  <link rel="stylesheet" href="css/main.scss" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="nav" aria-label="Primary">
+    <div class="container">
+      <strong class="logo">Laniege</strong>
+      <ul>
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#products" class="nav-link">Products</a></li>
+        <li><a href="#reviews" class="nav-link">Reviews</a></li>
+        <li><a href="#contact" class="nav-link">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Home / Hero -->
+  <header id="home" class="hero">
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="assets/my-bgvideo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="container">
+      <h1>Your skin deserves an ocean of hydration</h1>
+      <p>Luxury skincare infused with the purity of water.</p>
+    </div>
+  </header>
+
+  <!-- Products -->
+<section id="products" class="stripe section">
+  <div class="container">
+    <h2>Our Products</h2>
+
+    <div class="carousel">
+      <button class="carousel-btn prev" aria-label="Previous">&#10094;</button>
+
+      <div class="carousel-track">
+        <!-- Slide 1 -->
+        <div class="carousel-slide active">
+          <div class="product-content">
+            <div class="product-image">
+              <img src="assets/product1.jpeg" alt="Hydrating Serum">
+            </div>
+            <div class="product-info">
+              <h3>Hydrating Serum</h3>
+              <p class="desc">Deeply nourishes your skin with ocean minerals.</p>
+              <p class="price">$45.00</p>
+              <p class="ingredients"><strong>Key Ingredients:</strong> Hyaluronic Acid, Seaweed Extract, Vitamin E</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-slide">
+          <div class="product-content">
+            <div class="product-image">
+              <img src="assets/product2.jpeg" alt="Refreshing Mist">
+            </div>
+            <div class="product-info">
+              <h3>Facial Cleanser</h3>
+              <p class="desc">A splash of hydration with every wash.</p>
+              <p class="price">$30.00</p>
+              <p class="ingredients"><strong>Key Ingredients:</strong> Sea Moss, Ceramide, Marine Minerals</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-slide">
+          <div class="product-content">
+            <div class="product-image">
+              <img src="assets/product3.jpeg" alt="Moisture Cream">
+            </div>
+            <div class="product-info">
+              <h3>Moisture Cream</h3>
+              <p class="desc">Locks in hydration for long-lasting softness.</p>
+              <p class="price">$55.00</p>
+              <p class="ingredients"><strong>Key Ingredients:</strong> Shea Butter, Peptide Complex, Sea Minerals</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-btn next" aria-label="Next">&#10095;</button>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Reviews -->
+  <section id="reviews" class="stripe section alt">
+    <div class="container">
+      <h2>Customer Reviews</h2>
+      <div class="about-grid">
+        <!-- Review 1 -->
+        <div class="about-card" data-modal="modal-review1">
+          <i class="fas fa-user"></i>
+          <h3>Emily R.</h3>
+          <p>“My skin feels refreshed all day!”</p>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="about-card" data-modal="modal-review2">
+          <i class="fas fa-user"></i>
+          <h3>James L.</h3>
+          <p>“The hydration cream is a game changer.”</p>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="about-card" data-modal="modal-review3">
+          <i class="fas fa-user"></i>
+          <h3>Sophia M.</h3>
+          <p>“Light, smooth, and smells amazing.”</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Review Modals -->
+  <div id="modal-review1" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Emily R.</h3>
+      <p>“I’ve tried dozens of moisturizers, but this serum makes my skin feel alive again. It absorbs quickly and leaves no residue.”</p>
+    </div>
+  </div>
+
+  <div id="modal-review2" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>James L.</h3>
+      <p>“After using the hydration cream for two weeks, my dry patches disappeared. It’s perfect under makeup too.”</p>
+    </div>
+  </div>
+
+  <div id="modal-review3" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Sophia M.</h3>
+      <p>“The cleanser is so refreshing. I carry it in my bag everywhere. It’s my new daily essential.”</p>
+    </div>
+  </div>
+
+  <!-- Contact Us -->
+  <section id="contact" class="stripe section">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <div class="contact-grid">
+
+        <a href="mailto:info@laniege.com" class="contact-item">
+          <div class="icon"><i class="fas fa-envelope"></i></div>
+          <h3>Email</h3>
+        </a>
+
+        <a href="http://www.linkedin.com/company/laniege" target="_blank" class="contact-item">
+          <div class="icon"><i class="fab fa-linkedin"></i></div>
+          <h3>LinkedIn</h3>
+        </a>
+
+        <a href="https://www.instagram.com/laneige_us" target="_blank" class="contact-item">
+          <div class="icon"><i class="fab fa-instagram"></i></div>
+          <h3>Instagram</h3>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="stripe">
+    <div class="container">
+      <div>© <span id="year"></span> Laniege · <a href="#home">Back to top</a></div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/main.js"></script>
+</body>
 </html>
